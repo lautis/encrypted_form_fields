@@ -5,6 +5,8 @@ require "active_support/message_encryptor"
 require "encrypted_form_fields/version"
 require "encrypted_form_fields/encrypted_parameters"
 require "encrypted_form_fields/helpers/form_tag_helper"
+require "encrypted_form_fields/helpers/form_helper"
+require "encrypted_form_fields/helpers/form_builder"
 
 module EncryptedFormFields
   class << self
@@ -46,4 +48,6 @@ module EncryptedFormFields
 end
 
 ActionController::Base.send(:include, EncryptedFormFields::EncryptedParameters)
+ActionView::Helpers::FormBuilder.send(:include, EncryptedFormFields::Helpers::FormBuilder)
+ActionView::Helpers::FormHelper.send(:include, EncryptedFormFields::Helpers::FormHelper)
 ActionView::Helpers::FormTagHelper.send(:include, EncryptedFormFields::Helpers::FormTagHelper)
