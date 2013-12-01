@@ -1,4 +1,4 @@
-# EncryptedFormFields
+# EncryptedFormFields [![Build Status](https://travis-ci.org/lautis/encrypted_form_fields.png)](https://travis-ci.org/lautis/encrypted_form_fields)
 
 Encrypted form fields for Rails apps.
 
