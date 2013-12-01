@@ -1,6 +1,8 @@
+require "action_controller"
 require "active_support/message_encryptor"
 
 require "encrypted_form_fields/version"
+require "encrypted_form_fields/encrypted_parameters"
 
 module EncryptedFormFields
   class << self
@@ -34,3 +36,5 @@ module EncryptedFormFields
     end
   end
 end
+
+ActionController::Base.send(:include, EncryptedFormFields::EncryptedParameters)
