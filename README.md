@@ -18,6 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
+Configure necessary encryption keys in Rails initializer:
+
+```ruby
+EncryptedFormFields.secret_key_base = # your secret key base
+EncryptedFormFields.secret_key_token = # your secret token
+
 ```
 
 Create encrypted inputs in your view:
