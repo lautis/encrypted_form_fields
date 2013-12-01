@@ -1,6 +1,6 @@
 # EncryptedFormFields
 
-TODO: Write a gem description
+Encrypted form fields for Rails apps.
 
 ## Installation
 
@@ -18,7 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+
+Create encrypted inputs in your view:
+
+```erb
+
+<%= form_for(user) do |f| %>
+  <%= f.encrypted_field :secrets %>
+  <%= encrypted_field_tag :field_name, "secret data" %>
+<% end %>
+
+```
+
+Then access the data in controller:
+
+```ruby
+
+class SomeController
+  def create
+    # do stuff...
+    encrypted_params # This will contain values of encrypted parameters
+    # do stuff...
+  end
+end
+```
 
 ## Contributing
 
