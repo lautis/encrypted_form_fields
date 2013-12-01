@@ -1,8 +1,10 @@
 require "action_controller"
+require "action_view"
 require "active_support/message_encryptor"
 
 require "encrypted_form_fields/version"
 require "encrypted_form_fields/encrypted_parameters"
+require "encrypted_form_fields/helpers/form_tag_helper"
 
 module EncryptedFormFields
   class << self
@@ -24,6 +26,12 @@ module EncryptedFormFields
       @secret_token
     end
 
+    def prefix_name(name)
+      first, rest = name.split("[", 2)
+      rest = "[" + rest if rest
+      "_encrypted[#{first}]#{rest}"
+    end
+
     delegate :encrypt_and_sign, :decrypt_and_verify, to: :encryptor
 
     private
@@ -38,3 +46,4 @@ module EncryptedFormFields
 end
 
 ActionController::Base.send(:include, EncryptedFormFields::EncryptedParameters)
+ActionView::Helpers::FormTagHelper.send(:include, EncryptedFormFields::Helpers::FormTagHelper)
