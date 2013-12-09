@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'encrypted_form_fields/helpers/form_tag_helper'
 
 class FormTagHelperTest < ActionView::TestCase
   tests EncryptedFormFields::Helpers::FormTagHelper

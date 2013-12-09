@@ -1,10 +1,12 @@
 require 'test_helper'
+require 'encrypted_form_fields/helpers/form_helper'
 
 class FormBuilderTest < MiniTest::Unit::TestCase
   def setup
     super
     @template = Object.new
     @template.extend ActionView::Helpers::FormHelper
+    @template.extend EncryptedFormFields::Helpers::FormHelper
     @template.extend ActionView::Helpers::FormOptionsHelper
     @object = Struct.new(:bar).new(SecureRandom.base64)
   end
