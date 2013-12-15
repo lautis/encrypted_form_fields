@@ -12,7 +12,7 @@ module EncryptedFormFields
       #   => <input id="email_verified_at" name="_encrypted_email_verified_at" type="hidden" value="[encrypted]" />
       def encrypted_field_tag(name, value = nil, options = {})
         encrypted_value = EncryptedFormFields.encrypt_and_sign(value)
-        prefixed_name = EncryptedFormFields.prefix_name(name)
+        prefixed_name = EncryptedFormFields.prefix_name(name.to_s)
         tag :input, {
           "type" => "hidden",
           "name" => prefixed_name,
