@@ -3,6 +3,7 @@ require "action_view"
 require "active_support/message_encryptor"
 
 require "encrypted_form_fields/version"
+require "encrypted_form_fields/dfs"
 require "encrypted_form_fields/encrypted_parameters"
 require "encrypted_form_fields/helpers/form_builder"
 require 'encrypted_form_fields/railtie' if defined?(Rails)
@@ -34,6 +35,18 @@ module EncryptedFormFields
     end
 
     delegate :encrypt_and_sign, :decrypt_and_verify, to: :encryptor
+
+    # Decrypt encrypted parameters object
+    def decrypt_parameters(params)
+      Dfs.traverse(params || {}) do |value|
+        EncryptedFormFields.decrypt_and_verify(value)
+      end
+    end
+
+    # Encrypt hash values
+    def encrypt_parameters(hash = {})
+      Dfs.traverse(hash, &method(:encrypt_and_sign))
+    end
 
     private
 
