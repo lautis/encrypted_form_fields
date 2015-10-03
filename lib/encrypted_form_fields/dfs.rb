@@ -3,7 +3,7 @@ module EncryptedFormFields
     extend self
 
     def traverse(value, &block)
-      if value.is_a?(Hash)
+      if value.respond_to?(:each_pair)
         traverse_hash(value, &block)
       elsif value.is_a?(Array)
         traverse_array(value, &block)
@@ -15,10 +15,11 @@ module EncryptedFormFields
     private
 
     def traverse_hash(hash, &block)
-      hash.inject({}.with_indifferent_access) do |result, (key, value)|
+      result = {}.with_indifferent_access
+      hash.each_pair do |key, value|
         result[key] = traverse(value, &block)
-        result
       end
+      result
     end
 
     def traverse_array(array, &block)
