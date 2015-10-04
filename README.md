@@ -1,6 +1,9 @@
-# EncryptedFormFields [![Build Status](https://travis-ci.org/lautis/encrypted_form_fields.png)](https://travis-ci.org/lautis/encrypted_form_fields)
+# EncryptedFormFields
 
 Encrypted form fields for Rails apps.
+
+[![Build Status](https://travis-ci.org/lautis/encrypted_form_fields.svg)](https://travis-ci.org/lautis/encrypted_form_fields)
+[![Gem Version](https://badge.fury.io/rb/encrypted_form_fields.svg)](http://badge.fury.io/rb/encrypted_form_fields)
 
 ## Installation
 
