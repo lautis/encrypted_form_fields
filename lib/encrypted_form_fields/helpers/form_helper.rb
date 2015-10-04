@@ -1,4 +1,4 @@
-require 'encrypted_form_fields/helpers/encrypted_field'
+require "encrypted_form_fields/helpers/encrypted_field"
 
 module EncryptedFormFields
   module Helpers

@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - "encrypted_form_fields.gemspec"
+
+Metrics/AbcSize:
+  Exclude:
+    - "test/**/*_test.rb"
+
+Metrics/LineLength:
+  Max: 164
+
+Style/Documentation:
+  Enabled: false
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

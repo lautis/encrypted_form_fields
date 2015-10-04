@@ -1,5 +1,5 @@
-require 'test_helper'
-require 'encrypted_form_fields/helpers/form_helper'
+require "test_helper"
+require "encrypted_form_fields/helpers/form_helper"
 
 class FormBuilderTest < MiniTest::Unit::TestCase
   def setup

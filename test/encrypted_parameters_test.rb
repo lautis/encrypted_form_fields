@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class EncryptedParametersTest < MiniTest::Unit::TestCase
   def test_missing_encrypted_params
@@ -7,7 +7,7 @@ class EncryptedParametersTest < MiniTest::Unit::TestCase
   end
 
   def test_invalid_encrypted_params
-    controller = MockController.new({"_encrypted" => {"key" => "value"}})
+    controller = MockController.new("_encrypted" => { "key" => "value" })
     assert_raises ActiveSupport::MessageVerifier::InvalidSignature do
       controller.encrypted_params
     end
@@ -15,13 +15,13 @@ class EncryptedParametersTest < MiniTest::Unit::TestCase
 
   def test_properly_encrypted_params
     value = EncryptedFormFields.encrypt_and_sign("value")
-    controller = MockController.new({"_encrypted" => {"key" => value}})
-    assert_equal({"key" => "value"}, controller.encrypted_params)
+    controller = MockController.new("_encrypted" => { "key" => value })
+    assert_equal({ "key" => "value" }, controller.encrypted_params)
 
-    controller = MockController.new({"_encrypted" => {"key" => [value]}})
-    assert_equal({"key" => ["value"]}, controller.encrypted_params)
+    controller = MockController.new("_encrypted" => { "key" => [value] })
+    assert_equal({ "key" => ["value"] }, controller.encrypted_params)
 
-    controller = MockController.new({"_encrypted" => {"key" => {"nested" => value}}})
-    assert_equal({"key" => {"nested" => "value"}}, controller.encrypted_params)
+    controller = MockController.new("_encrypted" => { "key" => { "nested" => value } })
+    assert_equal({ "key" => { "nested" => "value" } }, controller.encrypted_params)
   end
 end

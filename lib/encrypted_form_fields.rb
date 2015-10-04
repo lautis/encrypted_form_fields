@@ -6,7 +6,7 @@ require "encrypted_form_fields/version"
 require "encrypted_form_fields/dfs"
 require "encrypted_form_fields/encrypted_parameters"
 require "encrypted_form_fields/helpers/form_builder"
-require 'encrypted_form_fields/railtie' if defined?(Rails)
+require "encrypted_form_fields/railtie" if defined?(Rails)
 
 module EncryptedFormFields
   class << self
@@ -15,18 +15,14 @@ module EncryptedFormFields
       @secret_key_base = key
     end
 
-    def secret_key_base
-      @secret_key_base
-    end
+    attr_reader :secret_key_base
 
     def secret_token=(key)
       @encryptor = nil
       @secret_token = key
     end
 
-    def secret_token
-      @secret_token
-    end
+    attr_reader :secret_token
 
     def prefix_name(name)
       first, rest = name.split("[", 2)

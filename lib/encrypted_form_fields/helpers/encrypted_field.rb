@@ -1,4 +1,4 @@
-require 'action_view/helpers/tags/hidden_field'
+require "action_view/helpers/tags/hidden_field"
 
 module EncryptedFormFields
   module Helpers
