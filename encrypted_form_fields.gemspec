@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Encrypted form fields for Rails}
   spec.homepage      = "https://github.com/lautis/encrypted_form_fields"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 1.9.3"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
