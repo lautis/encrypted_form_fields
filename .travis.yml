@@ -6,15 +6,16 @@ gemfile:
   - gemfiles/rails_4.1.gemfile
   - gemfiles/rails_4.2.gemfile
 rvm:
-  - 2.0.0
-  - 2.1.7
-  - 2.2.3
+  - '2.0'
+  - '2.1'
+  - '2.2'
+  - '2.3.0'
   - jruby
-  - jruby-9.0.1.0
-  - rbx-2.5
+  - jruby-9.0.4.0
+  - rbx
 matrix:
   include:
-    - rvm: 2.2.3
+    - rvm: '2.3.0'
       gemfile: gemfiles/rails_head.gemfile
   allow_failures:
     - gemfile: gemfiles/rails_head.gemfile
