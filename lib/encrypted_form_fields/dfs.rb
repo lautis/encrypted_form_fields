@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 module EncryptedFormFields
   module Dfs
     extend self

@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 ENV["RAILS_ENV"] = "test"
 require "minitest/autorun"
 require "minitest/pride"

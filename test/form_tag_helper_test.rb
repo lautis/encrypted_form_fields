@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 require "test_helper"
 require "encrypted_form_fields/helpers/form_tag_helper"
 

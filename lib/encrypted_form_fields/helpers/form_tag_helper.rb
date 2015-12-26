@@ -1,3 +1,5 @@
+# frozen-string-literal: true
+
 module EncryptedFormFields
   module Helpers
     module FormTagHelper

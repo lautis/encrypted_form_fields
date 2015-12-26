@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 require "encrypted_form_fields/helpers/encrypted_field"
 
 module EncryptedFormFields

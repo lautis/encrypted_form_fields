@@ -1,4 +1,4 @@
-# lib/my_gem/railtie.rb
+# frozen-string-literal: true
 require "encrypted_form_fields/helpers/form_tag_helper"
 require "encrypted_form_fields/helpers/form_helper"
 

@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 require "action_view/helpers/tags/hidden_field"
 
 module EncryptedFormFields

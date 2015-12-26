@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 require "action_controller"
 require "action_view"
 require "active_support/message_encryptor"

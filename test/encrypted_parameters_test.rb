@@ -1,3 +1,4 @@
+# frozen-string-literal: true
 require "test_helper"
 
 class EncryptedParametersTest < MiniTest::Unit::TestCase
