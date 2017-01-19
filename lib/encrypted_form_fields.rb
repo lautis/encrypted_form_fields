@@ -49,7 +49,7 @@ module EncryptedFormFields
 
     def encryptor
       @encryptor ||= begin
-        key = ActiveSupport::KeyGenerator.new(secret_token).generate_key(secret_key_base)
+        key = ActiveSupport::KeyGenerator.new(secret_token).generate_key(secret_key_base, 32)
         ActiveSupport::MessageEncryptor.new(key)
       end
     end
