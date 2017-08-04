@@ -1,6 +1,7 @@
 # frozen-string-literal: true
 require "encrypted_form_fields/helpers/form_tag_helper"
 require "encrypted_form_fields/helpers/form_helper"
+require "rails/railtie"
 
 module EncryptedFormFields
   class Railtie < Rails::Railtie
