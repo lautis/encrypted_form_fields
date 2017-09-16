@@ -7,17 +7,17 @@ gemfile:
   - gemfiles/rails_5.1.gemfile
   - Gemfile
 rvm:
-  - '2.2.6'
-  - '2.3.3'
-  - '2.4.1'
-  - jruby-9.1.8.0
+  - '2.2.8'
+  - '2.3.5'
+  - '2.4.2'
+  - jruby-9.1.13.0
 matrix:
   include:
-    - rvm: '2.3.3'
+    - rvm: '2.3.5'
       gemfile: 'gemfiles/rails_4.0.gemfile'
-    - rvm: '2.3.3'
+    - rvm: '2.3.5'
       gemfile: 'gemfiles/rails_4.1.gemfile'
-    - rvm: '2.4.1'
+    - rvm: '2.4.2'
       gemfile: gemfiles/rails_head.gemfile
   allow_failures:
     - gemfile: gemfiles/rails_head.gemfile
